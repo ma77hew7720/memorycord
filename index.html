@@ -57,7 +57,7 @@ section{padding:7rem 3rem}
 .privacy-pillars{display:flex;flex-direction:column;gap:1.5rem}
 .pillar{padding:1.5rem;border:0.5px solid rgba(74,107,168,0.25);border-radius:4px;background:rgba(16,32,96,0.3)}
 .pillar-title{font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
-.pillar-body{font-size:0.95rem;font-weight:300;line-height:1.7;color:rgba(253,232,192,0.6)}
+.pillar-body{font-size:0.95rem;font-weight:300;line-height:1.7;color:rgba(255,248,236,0.9)}
 
 .packages-section{background:var(--cream)}
 .carousel-outer{margin-top:3rem;overflow:hidden;max-width:100%;position:relative}
@@ -112,7 +112,10 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.9s ease,transform 0.9s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+.swipe-hint{display:none}
 @media(max-width:768px){
+  .swipe-hint{display:block;font-size:0.8rem;font-weight:300;letter-spacing:0.2em;color:var(--steel);margin-top:1rem;text-align:center}
+}
   nav{padding:1.2rem 1.5rem}
   .nav-links{display:none}
   section{padding:5rem 2rem}
@@ -230,6 +233,7 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     <div class="section-eyebrow reveal">The packages</div>
     <p class="what-lead reveal" style="margin-bottom:0.5rem;">Every story deserves<br><em>the right frame.</em></p>
     <p class="what-body reveal" style="margin-bottom:0;">Choose the depth that fits the life you want to preserve.</p>
+    <p class="swipe-hint">← Swipe to explore →</p>
   </div>
 
     <div class="carousel-outer" id="carouselOuter">
