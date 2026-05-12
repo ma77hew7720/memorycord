@@ -232,7 +232,7 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     <p class="what-body reveal" style="margin-bottom:0;">Choose the depth that fits the life you want to preserve.</p>
   </div>
 
-    <div class="carousel-outer reveal" id="carouselOuter">
+    <div class="carousel-outer" id="carouselOuter">
       <div class="carousel-track" id="carouselTrack">
 
         <div class="package-card">
@@ -414,7 +414,7 @@ const track = document.getElementById('carouselTrack');
 const isMobile = window.innerWidth <= 768;
 
 if (isMobile) {
-  setTimeout(() => {
+  function fixCarousel() {
     const outer = document.getElementById('carouselOuter');
     const section = document.getElementById('packages');
     section.style.padding = '3rem 0';
@@ -425,8 +425,13 @@ if (isMobile) {
       card.style.cssText = 'flex:0 0 100vw !important;width:100vw !important;min-width:100vw !important;scroll-snap-align:start;padding:2rem !important;box-sizing:border-box !important;border-radius:0 !important;border-left:none !important;border-right:none !important;';
     });
     const sectionInner = section.querySelector('.section-inner');
-    sectionInner.after(outer);
-  }, 100);
+    if (outer.parentElement !== section || outer.previousElementSibling === sectionInner) {
+      sectionInner.after(outer);
+    }
+  }
+  setTimeout(fixCarousel, 100);
+  setTimeout(fixCarousel, 500);
+  setTimeout(fixCarousel, 1000);
 }
 
 if (!isMobile) {
