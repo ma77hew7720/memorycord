@@ -120,16 +120,25 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
   .about-inner{grid-template-columns:1fr;gap:2rem}
   .about-names{position:static}
   footer{flex-direction:column;gap:0.8rem;text-align:center}
-  .package-card{flex:0 0 100vw !important;width:100vw !important;min-width:0;scroll-snap-align:center;padding:2rem 2rem !important;border-radius:0 !important;border-left:none !important;border-right:none !important}
-  .carousel-outer{overflow-x:auto !important;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .packages-section{padding:5rem 0 !important}
+  .packages-section .section-inner{padding-left:2rem;padding-right:2rem}
+  .carousel-outer{overflow-x:scroll !important;overflow-y:visible !important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:2rem 0 0;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
   .carousel-outer::-webkit-scrollbar{display:none}
-  .carousel-track{padding:0;gap:0;transform:none !important}
+  .carousel-track{padding:0 2rem;gap:1rem;transform:none !important}
+  .package-card{flex:0 0 85vw !important;width:85vw !important;min-width:0 !important;scroll-snap-align:center;padding:2rem 1.5rem !important}
   .carousel-controls{display:none}
   #prevBtn,#nextBtn{display:none !important}
-  .packages-section{padding:0 !important}
-  .packages-section .section-inner{padding:3rem 1.5rem 0}
   .carousel-hint{display:none}
+  .about-body{font-size:1.35rem;color:#0D1A3A;line-height:2}
+  .about-credential p{font-size:1.35rem;color:#0D1A3A}
+  .package-name{font-size:0.85rem;color:#1A2A4A}
+  .package-title{font-size:1.8rem;color:#0D1A3A}
+  .package-price{font-size:1.3rem;color:#0D1A3A}
+  .package-desc{font-size:1.15rem;color:#1A2A4A;line-height:1.9}
+  .package-details li{font-size:1.05rem;color:#1A2A4A}
+  .package-storage{font-size:0.9rem;color:#2B4A8C}
   .contact-inner{padding:16rem 1.5rem 4rem}
+}
   .section-inner{padding:0 1.5rem}
   .about-body{font-size:1.35rem;color:#0D1A3A;line-height:2}
   .about-credential p{font-size:1.35rem;color:#0D1A3A}
