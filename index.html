@@ -59,7 +59,7 @@ section{padding:7rem 3rem}
 .pillar-body{font-size:0.95rem;font-weight:300;line-height:1.7;color:rgba(253,232,192,0.6)}
 
 .packages-section{background:var(--cream)}
-.carousel-outer{margin-top:3rem;overflow:hidden;max-width:100%}
+.carousel-outer{margin-top:3rem;overflow:hidden;max-width:100%;position:relative}
 .carousel-track{display:flex;gap:1.5rem;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);will-change:transform}
 .package-card{flex:0 0 300px;border:0.5px solid rgba(43,74,140,0.2);border-radius:6px;padding:2.5rem 2rem;background:white;position:relative;transition:border-color 0.4s,transform 0.4s}
 .package-card:hover{border-color:rgba(43,74,140,0.5);transform:translateY(-4px)}
@@ -75,9 +75,9 @@ section{padding:7rem 3rem}
 .package-details li{font-size:0.85rem;font-weight:300;color:#5A6A8A;padding-left:1.2rem;position:relative;line-height:1.5}
 .package-details li::before{content:'—';position:absolute;left:0;color:var(--gold)}
 .package-storage{margin-top:1.5rem;padding-top:1.2rem;border-top:0.5px solid rgba(43,74,140,0.12);font-size:0.78rem;font-weight:300;color:var(--steel);letter-spacing:0.08em}
-.carousel-controls{display:flex;align-items:center;gap:1rem;margin-top:2rem}
-.carousel-btn{width:40px;height:40px;border:0.5px solid rgba(43,74,140,0.3);border-radius:50%;background:transparent;color:var(--cobalt);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.3s,border-color 0.3s;font-family:inherit;line-height:1}
-.carousel-btn:hover{background:rgba(43,74,140,0.08);border-color:rgba(43,74,140,0.6)}
+.carousel-controls{display:flex;align-items:center;gap:1rem;margin-top:1.5rem}
+.carousel-btn{width:56px;height:56px;border:0.5px solid rgba(43,74,140,0.4);border-radius:50%;background:rgba(255,255,255,0.9);color:var(--cobalt);font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.3s,border-color 0.3s,box-shadow 0.3s;font-family:inherit;line-height:1;box-shadow:0 4px 20px rgba(43,74,140,0.15)}
+.carousel-btn:hover{background:white;border-color:rgba(43,74,140,0.6);box-shadow:0 6px 24px rgba(43,74,140,0.25)}
 .carousel-btn:disabled{opacity:0.3;cursor:default}
 .carousel-dots{display:flex;gap:6px;align-items:center}
 .carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(43,74,140,0.2);transition:background 0.3s,transform 0.3s;cursor:pointer;border:none}
@@ -123,6 +123,14 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
   .carousel-hint{display:none}
   .contact-inner{padding:16rem 1.5rem 4rem}
   .section-inner{padding:0 1.5rem}
+  .about-body{font-size:1.15rem;color:#1A2A4A;line-height:2}
+  .about-credential p{font-size:1.15rem;color:#1A2A4A}
+  .package-name{font-size:0.8rem;color:#2B4A8C}
+  .package-title{font-size:1.6rem;color:#0D1A3A}
+  .package-price{font-size:1.15rem;color:#1A2A4A}
+  .package-desc{font-size:1rem;color:#2A3A5A;line-height:1.9}
+  .package-details li{font-size:0.95rem;color:#2A3A5A}
+  .package-storage{font-size:0.85rem;color:#2B4A8C}
 }
 </style>
 </head>
