@@ -407,36 +407,36 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 const track = document.getElementById('carouselTrack');
-const cards = track.querySelectorAll('.package-card');
-const dotsContainer = document.getElementById('carouselDots');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
 const isMobile = window.innerWidth <= 768;
-const cardWidth = isMobile ? window.innerWidth * 0.85 + 24 : 300 + 24;
-const sideOffset = isMobile ? (window.innerWidth - window.innerWidth * 0.85) / 2 : 0;
-if (isMobile) track.style.paddingLeft = sideOffset + 'px';
-let current = 0;
-const visible = 3;
-const max = cards.length - visible;
 
-cards.forEach((_, i) => {
-  const dot = document.createElement('button');
-  dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-  dot.setAttribute('aria-label', 'Go to package ' + (i+1));
-  dot.onclick = () => goTo(i);
-  dotsContainer.appendChild(dot);
-});
+if (!isMobile) {
+  const cards = track.querySelectorAll('.package-card');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const cardWidth = 300 + 24;
+  let current = 0;
+  const visible = 3;
+  const max = cards.length - visible;
 
-function goTo(n) {
-  current = Math.max(0, Math.min(n, max));
-  const offset = isMobile ? (window.innerWidth - window.innerWidth * 0.85) / 2 : 0;
-  track.style.transform = 'translateX(-' + (current * cardWidth - (current === 0 ? 0 : 0)) + 'px)';
-  document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-  prevBtn.disabled = current === 0;
-  nextBtn.disabled = current >= max;
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to package ' + (i+1));
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    current = Math.max(0, Math.min(n, max));
+    track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= max;
+  }
+
+  window.moveCarousel = (dir) => goTo(current + dir);
 }
-
-window.moveCarousel = (dir) => goTo(current + dir);
 </script>
 </body>
 </html>
