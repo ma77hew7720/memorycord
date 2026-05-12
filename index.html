@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip;max-width:100%}
 :root{
   --before-dawn:#080D1F;--midnight:#102060;--prussian:#1A2E70;--cobalt:#2B4A8C;
   --steel:#4A6BA8;--violet:#7B6E9A;--blush:#C4788A;--amber:#E8936A;--gold:#F5C27A;
@@ -119,12 +120,14 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
   .about-inner{grid-template-columns:1fr;gap:2rem}
   .about-names{position:static}
   footer{flex-direction:column;gap:0.8rem;text-align:center}
-  .package-card{flex:0 0 96vw !important;width:96vw !important;min-width:0;scroll-snap-align:center;padding:2rem 1.5rem !important}
+  .package-card{flex:0 0 90vw !important;width:90vw !important;min-width:0;scroll-snap-align:center;padding:2rem 1.5rem !important}
   .carousel-outer{overflow-x:auto !important;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .carousel-outer::-webkit-scrollbar{display:none}
-  .carousel-track{padding:0 2vw;transform:none !important}
+  .carousel-track{padding:0 5vw;transform:none !important}
   .carousel-controls{display:none}
   #prevBtn,#nextBtn{display:none !important}
+  .packages-section{padding-left:0 !important;padding-right:0 !important}
+  .packages-section .section-inner{padding-left:1.5rem;padding-right:1.5rem}
   .carousel-hint{display:none}
   .contact-inner{padding:16rem 1.5rem 4rem}
   .section-inner{padding:0 1.5rem}
