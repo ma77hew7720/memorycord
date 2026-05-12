@@ -60,7 +60,7 @@ section{padding:7rem 3rem}
 
 .packages-section{background:var(--cream)}
 .carousel-outer{margin-top:3rem;overflow:hidden;max-width:100%;position:relative}
-.carousel-track{display:flex;gap:1.5rem;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.carousel-track{display:flex;gap:1.5rem;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);will-change:transform;padding-left:0}
 .package-card{flex:0 0 300px;border:0.5px solid rgba(43,74,140,0.2);border-radius:6px;padding:2.5rem 2rem;background:white;position:relative;transition:border-color 0.4s,transform 0.4s}
 .package-card:hover{border-color:rgba(43,74,140,0.5);transform:translateY(-4px)}
 .package-card.featured{border-color:rgba(232,147,106,0.4);background:linear-gradient(160deg,#FFF8EC,#FDF6EC)}
@@ -119,7 +119,11 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
   .about-inner{grid-template-columns:1fr;gap:2rem}
   .about-names{position:static}
   footer{flex-direction:column;gap:0.8rem;text-align:center}
-  .package-card{flex:0 0 85vw !important;width:85vw !important;min-width:0}
+  .package-card{flex:0 0 85vw !important;width:85vw !important;min-width:0;scroll-snap-align:center}
+  .carousel-outer{overflow-x:auto !important;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .carousel-outer::-webkit-scrollbar{display:none}
+  .carousel-track{padding:0 7.5vw;transform:none !important}
+  .carousel-controls{display:none}
   .carousel-hint{display:none}
   .contact-inner{padding:16rem 1.5rem 4rem}
   .section-inner{padding:0 1.5rem}
@@ -398,6 +402,8 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const isMobile = window.innerWidth <= 768;
 const cardWidth = isMobile ? window.innerWidth * 0.85 + 24 : 300 + 24;
+const sideOffset = isMobile ? (window.innerWidth - window.innerWidth * 0.85) / 2 : 0;
+if (isMobile) track.style.paddingLeft = sideOffset + 'px';
 let current = 0;
 const visible = 3;
 const max = cards.length - visible;
@@ -412,7 +418,8 @@ cards.forEach((_, i) => {
 
 function goTo(n) {
   current = Math.max(0, Math.min(n, max));
-  track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+  const offset = isMobile ? (window.innerWidth - window.innerWidth * 0.85) / 2 : 0;
+  track.style.transform = 'translateX(-' + (current * cardWidth - (current === 0 ? 0 : 0)) + 'px)';
   document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current >= max;
