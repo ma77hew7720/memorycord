@@ -123,14 +123,14 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
   .carousel-hint{display:none}
   .contact-inner{padding:16rem 1.5rem 4rem}
   .section-inner{padding:0 1.5rem}
-  .about-body{font-size:1.15rem;color:#1A2A4A;line-height:2}
-  .about-credential p{font-size:1.15rem;color:#1A2A4A}
-  .package-name{font-size:0.8rem;color:#2B4A8C}
-  .package-title{font-size:1.6rem;color:#0D1A3A}
-  .package-price{font-size:1.15rem;color:#1A2A4A}
-  .package-desc{font-size:1rem;color:#2A3A5A;line-height:1.9}
-  .package-details li{font-size:0.95rem;color:#2A3A5A}
-  .package-storage{font-size:0.85rem;color:#2B4A8C}
+  .about-body{font-size:1.35rem;color:#0D1A3A;line-height:2}
+  .about-credential p{font-size:1.35rem;color:#0D1A3A}
+  .package-name{font-size:0.85rem;color:#1A2A4A}
+  .package-title{font-size:1.8rem;color:#0D1A3A}
+  .package-price{font-size:1.3rem;color:#0D1A3A}
+  .package-desc{font-size:1.15rem;color:#1A2A4A;line-height:1.9}
+  .package-details li{font-size:1.05rem;color:#1A2A4A}
+  .package-storage{font-size:0.9rem;color:#2B4A8C}
 }
 </style>
 </head>
@@ -210,7 +210,10 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     <p class="what-lead reveal" style="margin-bottom:0.5rem;">Every story deserves<br><em>the right frame.</em></p>
     <p class="what-body reveal" style="margin-bottom:0;">Choose the depth that fits the life you want to preserve.</p>
 
-    <div class="carousel-outer reveal">
+    <div style="position:relative;padding:0 40px;">
+      <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)" disabled style="position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:10;">&#8592;</button>
+      <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)" style="position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:10;">&#8594;</button>
+      <div class="carousel-outer reveal">
       <div class="carousel-track" id="carouselTrack">
 
         <div class="package-card">
@@ -321,13 +324,13 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
 
       </div>
     </div>
+    </div>
 
     <div class="carousel-controls reveal">
-      <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)" disabled>&#8592;</button>
-      <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">&#8594;</button>
       <div class="carousel-dots" id="carouselDots"></div>
       <span class="carousel-hint">Scroll to explore all packages</span>
     </div>
+
   </div>
 </section>
 
