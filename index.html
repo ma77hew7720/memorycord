@@ -229,7 +229,7 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     <p style="color:red;font-size:1rem;">TEST v2</p>
   </div>
 
-    <div class="carousel-outer reveal">
+    <div class="carousel-outer reveal" id="carouselOuter">
       <div class="carousel-track" id="carouselTrack">
 
         <div class="package-card">
@@ -409,6 +409,16 @@ reveals.forEach(el => observer.observe(el));
 
 const track = document.getElementById('carouselTrack');
 const isMobile = window.innerWidth <= 768;
+
+if (isMobile) {
+  const outer = document.getElementById('carouselOuter');
+  outer.style.cssText = 'overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;width:100vw;position:relative;left:50%;transform:translateX(-50%);margin-top:2rem;';
+  track.style.cssText = 'display:flex;gap:0;padding:0;transform:none;';
+  const allCards = track.querySelectorAll('.package-card');
+  allCards.forEach(card => {
+    card.style.cssText = 'flex:0 0 100vw;width:100vw;min-width:0;scroll-snap-align:center;padding:2rem;box-sizing:border-box;border-radius:0;border-left:none;border-right:none;';
+  });
+}
 
 if (!isMobile) {
   const cards = track.querySelectorAll('.package-card');
