@@ -414,19 +414,19 @@ const track = document.getElementById('carouselTrack');
 const isMobile = window.innerWidth <= 768;
 
 if (isMobile) {
-  const outer = document.getElementById('carouselOuter');
-  // Remove from current parent and append directly to body
-  const section = document.getElementById('packages');
-  section.style.padding = '3rem 0';
-  outer.style.cssText = 'overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;width:100vw;display:block;margin:2rem 0 0;';
-  track.style.cssText = 'display:flex;gap:0;padding:0;transform:none !important;width:auto;';
-  const allCards = track.querySelectorAll('.package-card');
-  allCards.forEach(card => {
-    card.style.cssText = 'flex:0 0 100vw !important;width:100vw !important;min-width:100vw !important;scroll-snap-align:start;padding:2rem !important;box-sizing:border-box !important;border-radius:0 !important;border-left:none !important;border-right:none !important;';
-  });
-  // Move carousel outside section-inner
-  const sectionInner = section.querySelector('.section-inner');
-  sectionInner.after(outer);
+  setTimeout(() => {
+    const outer = document.getElementById('carouselOuter');
+    const section = document.getElementById('packages');
+    section.style.padding = '3rem 0';
+    outer.style.cssText = 'overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;width:100vw;display:block;margin:2rem 0 0;';
+    track.style.cssText = 'display:flex;gap:0;padding:0;transform:none !important;width:auto;';
+    const allCards = track.querySelectorAll('.package-card');
+    allCards.forEach(card => {
+      card.style.cssText = 'flex:0 0 100vw !important;width:100vw !important;min-width:100vw !important;scroll-snap-align:start;padding:2rem !important;box-sizing:border-box !important;border-radius:0 !important;border-left:none !important;border-right:none !important;';
+    });
+    const sectionInner = section.querySelector('.section-inner');
+    sectionInner.after(outer);
+  }, 100);
 }
 
 if (!isMobile) {
