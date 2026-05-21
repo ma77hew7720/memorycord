@@ -45,10 +45,10 @@ section{padding:7rem 3rem}
 .section-eyebrow{font-size:1rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--steel);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
 .section-eyebrow::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(74,107,168,0.4),transparent)}.section-eyebrow.light::after{background:linear-gradient(90deg,rgba(253,232,192,0.4),transparent)}
 
-.what-section{background:var(--cream)}
-.what-lead{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;line-height:1.5;color:var(--text-dark);margin-bottom:2.5rem}
+.what-section{background:var(--cream)}.what-section .section-inner{max-width:640px}
+.what-lead{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;line-height:1.5;color:var(--text-dark);margin-bottom:2.5rem;text-align:left}
 .what-lead em{font-style:italic;color:var(--cobalt)}
-.what-body{font-size:1.1rem;font-weight:300;line-height:1.85;color:#3A4A6A;max-width:640px}
+.what-body{font-size:1.1rem;font-weight:300;line-height:1.85;color:#3A4A6A;max-width:640px;text-align:left}
 .what-body+.what-body{margin-top:1.2rem}
 .mark-wrap{display:flex;justify-content:center;margin:4rem 0 0;opacity:0.7}
 
@@ -213,8 +213,8 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     <p class="what-lead reveal">Most families have thousands of photographs.<br>Almost none have a recording of <em>the voice.</em></p>
     <p class="what-body reveal">Memorycord captures, shapes, and produces the stories that matter most — scored with music, designed with the care of a film, and preserved for the people who deserve to hear them. Not a recording service. A produced cinematic experience. Something you feel.</p>
     <p class="what-body reveal">We conduct intimate interviews, sculpt every moment, and deliver something that makes a room go quiet. The music is chosen for this person, this life, this moment. Every piece is one of a kind.</p>
-    <div class="mark-wrap reveal">
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+    <div class="mark-wrap reveal" style="flex-direction:column;align-items:center;gap:1.2rem;margin-top:4rem;">
+      <svg width="72" height="72" viewBox="0 0 64 64" fill="none">
         <defs><radialGradient id="hm" cx="50%" cy="72%" r="65%"><stop offset="0%" stop-color="#F5C27A"/><stop offset="28%" stop-color="#E8936A"/><stop offset="52%" stop-color="#7B6E9A"/><stop offset="76%" stop-color="#2B4A8C"/><stop offset="100%" stop-color="#080D1F"/></radialGradient></defs>
         <circle cx="32" cy="32" r="31" fill="url(#hm)"/>
         <line x1="10" y1="32" x2="14" y2="32" stroke="rgba(255,248,236,0.55)" stroke-width="1.1" stroke-linecap="round"/>
@@ -227,6 +227,13 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
         <line x1="47" y1="27" x2="47" y2="37" stroke="rgba(255,248,236,0.52)" stroke-width="1.1" stroke-linecap="round"/>
         <line x1="50" y1="32" x2="54" y2="32" stroke="rgba(255,248,236,0.38)" stroke-width="1.1" stroke-linecap="round"/>
       </svg>
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:300;font-style:italic;letter-spacing:0.18em;color:var(--cobalt);margin:0.8rem 0 1.2rem;">Listen to a story</p>
+      <div style="width:100%;max-width:560px;background:white;border:0.5px solid rgba(43,74,140,0.2);border-radius:6px;padding:1.5rem 2rem;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:0.75rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--steel);margin:0 0 0.8rem;">#1 — Anonymous Story Teller</p>
+        <audio controls style="width:100%;outline:none;accent-color:#2B4A8C;">
+          <source src="https://mymemorycord.com/PeterstoryAfrica_mixdown.mp3" type="audio/mpeg">
+        </audio>
+      </div>
     </div>
   </div>
 </section>
@@ -462,7 +469,7 @@ footer{background:var(--before-dawn);padding:2.5rem 3rem;display:flex;justify-co
     
     
     <p class="contact-sub reveal">&ldquo;There is no greater<br>agony than bearing<br>an untold story<br>inside you.&rdquo;<br><span style="font-size:0.8rem;letter-spacing:0.2em;font-style:normal;">— Maya Angelou</span></p>
-    <div class="reveal" style="border:0.5px solid rgba(255,248,236,0.4);padding:2.5rem 4.5rem;margin:0 auto;max-width:560px;display:inline-block;">
+    <div class="reveal" style="border:0.5px solid rgba(255,248,236,0.4);padding:2.5rem 4.5rem;margin:0 auto;max-width:560px;display:block;box-sizing:border-box;width:90%;">
       <p style="font-size:1.1rem;font-style:normal;color:rgba(255,248,236,0.95);margin-bottom:1.2rem;line-height:1.6;font-family:inherit;font-weight:300;">If you or someone in your life<br>has a story that deserves to last,<br>we’d love to hear from you.</p>
       <a href="mailto:MyStory@mymemorycord.com" class="contact-email" style="display:block;margin-bottom:1.2rem;">MyStory@mymemorycord.com</a>
       <p style="font-size:0.78rem;font-weight:300;letter-spacing:0.15em;color:rgba(255,248,236,1);text-transform:uppercase;font-family:inherit;margin:0;">All inquiries and consultations are held in complete confidence.</p>
